@@ -25,7 +25,7 @@ function EmojiSearch() {
   
   const handleSearch = () => {
     if (!searchTerm.trim()) {
-      setError("Search term cannot be empty.");
+      setError("Input field cannot be empty.");
       setFilteredEmojis([]);
       setIsSearching(false); 
       return;
