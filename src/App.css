@@ -102,4 +102,15 @@ div p.bottom-text span {
   div p.bottom-text {
     font-size: 1.1rem;
   }
+
+  div p.bottom-text{
+    width: 90%;
+  }
+
+  div h2 {
+    font-size: 2rem;
+    border: 3px solid red;
+    margin: 0.5em;
+    padding: 0.2em;
+  }
 }
