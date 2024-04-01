@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-color: rgb(184, 183, 169);
+
+}
+
+div h2{
+    font-size: 3rem;
+    border: 3px solid red;
+    margin: 0.5em;
+    padding: 0.4em;
+}
+
+div.container{
+    max-width: 1000PX;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.inputfield{
+    margin: 2em 0 1em 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.4em;
+    /* border: 1px solid blue; */
+}
+
+div button{
+    cursor: pointer;
+    width: 8%;
+    font-size: 1.1em;
+    background-color: black;
+    color: #fff;
+    border-radius: 0.3rem;
+    transition: 0.5s;
+    border: none;
+    
+    /* padding: 0.7em; */
+}
+
+div button:hover{
+    background-color: rgb(49, 47, 47);
+    border: none;
+}
+
+div input.input{
+    padding: 0.6em;
+    width: 50%;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+div.emojiContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    /* margin-bottom: 2em; */
+    border: 1px solid black;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-content:center;
+}
+
+div.emojiContainer .display{
+    font-size: 2.5rem;
+}
+
+div p.bottom-text{
+
+    width: 60%;
+    margin: 0 auto;
+    padding: 0.2em;
+    font-size: 1.3em;
+}
+
+div p.bottom-text span{
+    color: red;
+    cursor: pointer;
+}
