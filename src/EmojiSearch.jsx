@@ -38,34 +38,38 @@ function EmojiSearch() {
     } else {
       setError("");
       setFilteredEmojis(filtered);
+      // setFilteredEmojis([<div key="container">{filtered}</div>])
       setIsSearching(true);
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Favorite Emojis</h2>
-      <input
+     <div className="inputfield">
+     <input
+     className="input"
         type="text"
         placeholder="Search for emojis"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button onClick={handleSearch}>Search</button>
+     </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {isSearching && (
-        <div>
+        <div className="emojiContainer">
           {filteredEmojis.map((emoji, index) => (
-            <div key={index}>{emoji.character}</div>
+            <div className="display" key={index}>{emoji.character}</div>
           ))}
         </div>
       )}
       {filteredEmojis.length === 0 && !error && (
-        <p>
-          search for your favourite emojis by searching for words like
-          <span>"Love", "Music"</span>, and <span>"Sleep"</span>.
+        <p className="bottom-text">
+          search for your favourite emojis by searching/typing words like:
+          <span> "Love" </span>, <span>"Music"</span>, and <span>"Sleep"</span>, and we'll show you matching emoji.
         </p>
       )}
     </div>
