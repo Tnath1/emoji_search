@@ -3,15 +3,15 @@ import React, { useState } from "react";
 
 function EmojiSearch() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [allEmojis, setAllEmojis] = useState([]); // Stores all emojis
-  const [filteredEmojis, setFilteredEmojis] = useState([]); // Stores filtered emojis
+  const [allEmojis, setAllEmojis] = useState([]); 
+  const [filteredEmojis, setFilteredEmojis] = useState([]); 
   const [error, setError] = useState("");
-  const [isSearching, setIsSearching] = useState(false); // State to track if searching is in progress
+  const [isSearching, setIsSearching] = useState(false); 
 
-  const accessKey = "fe64e9c28761bbe1724bdd3186ebb4a4db9d35c6"; // Your access key here
+  const accessKey = "fe64e9c28761bbe1724bdd3186ebb4a4db9d35c6"; 
   const baseApiUrl = "https://emoji-api.com/emojis";
 
-  // Fetch all emojis once on component mount
+
   useEffect(() => {
     fetch(`${baseApiUrl}?access_key=${accessKey}`)
       .then((response) => response.json())
@@ -38,7 +38,6 @@ function EmojiSearch() {
     } else {
       setError("");
       setFilteredEmojis(filtered);
-      // setFilteredEmojis([<div key="container">{filtered}</div>])
       setIsSearching(true);
     }
   };
@@ -60,11 +59,13 @@ function EmojiSearch() {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {isSearching && (
-        <div className="emojiContainer">
+       <div className="contain">
+         <div className="emojiContainer">
           {filteredEmojis.map((emoji, index) => (
             <div className="display" key={index}>{emoji.character}</div>
           ))}
         </div>
+       </div>
       )}
       {filteredEmojis.length === 0 && !error && (
         <p className="bottom-text">
