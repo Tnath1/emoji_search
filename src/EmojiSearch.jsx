@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
 
-
 function EmojiSearch() {
   const [searchTerm, setSearchTerm] = useState("");
   const [allEmojis, setAllEmojis] = useState([]); // Stores all emojis
@@ -20,14 +19,13 @@ function EmojiSearch() {
         setAllEmojis(data);
       })
       .catch((error) => console.error("Error fetching all emojis:", error));
-  }, [searchTerm]); 
+  }, [searchTerm]);
 
-  
   const handleSearch = () => {
     if (!searchTerm.trim()) {
       setError("Input field cannot be empty.");
       setFilteredEmojis([]);
-      setIsSearching(false); 
+      setIsSearching(false);
       return;
     }
 
@@ -35,12 +33,12 @@ function EmojiSearch() {
       emoji.unicodeName.toLowerCase().includes(searchTerm.toLowerCase())
     );
     if (filtered.length === 0) {
-      setError(`No emojis found with name "${searchTerm}".`);
-      setFilteredEmojis([]); 
+      setError(`No emoji is found with the name "${searchTerm}".`);
+      setFilteredEmojis([]);
     } else {
       setError("");
       setFilteredEmojis(filtered);
-      setIsSearching(true); 
+      setIsSearching(true);
     }
   };
 
@@ -60,10 +58,7 @@ function EmojiSearch() {
       {isSearching && (
         <div>
           {filteredEmojis.map((emoji, index) => (
-            <div key={index}>
-              
-              {emoji.character} 
-            </div>
+            <div key={index}>{emoji.character}</div>
           ))}
         </div>
       )}
