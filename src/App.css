@@ -10,6 +10,7 @@ body {
 div h2 {
   font-size: 3rem;
   border: 3px solid red;
+  border-radius: 0.15em;
   margin: 0.5em;
   padding: 0.4em;
 }
@@ -34,13 +35,15 @@ div button {
   background-color: black;
   color: #fff;
   border-radius: 0.3rem;
-  transition: 0.5s;
+  transition: 0.5s ease;
   border: none;
 }
 
 div button:hover {
-  background-color: rgb(49, 47, 47);
-  border: none;
+  background-color: rgb(199, 199, 199);
+  border: 1px solid black;
+  color: black;
+
 }
 
 div input.input {
